@@ -23,7 +23,6 @@ class TestBMICalculator(unittest.TestCase):
         self.assertEqual(calculate_bmi(5, 7, 121), (18.9, "Normal Weight"))
 
     def test_zero_height(self):
-        """Test that zero height raises a ValueError"""
         with self.assertRaises(ValueError):
             calculate_bmi(0, 0, 150)
 
@@ -31,7 +30,6 @@ class TestBMICalculator(unittest.TestCase):
         self.assertEqual(calculate_bmi(7, 0, 300), (29.9, "Overweight"))
 
     def test_non_numeric_input(self):
-        """Test handling of non-numeric input"""
         with self.assertRaises(ValueError):
             calculate_bmi("five", 7, 150)  # Non-numeric feet
         with self.assertRaises(ValueError):

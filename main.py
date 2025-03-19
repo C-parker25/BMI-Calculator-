@@ -1,13 +1,19 @@
-from BMI import Calculate_BMI
+from BMI import calculate_bmi  # Updated function name to match the previous example
+
 def main():
-    print("Welcome to the BMI Calculator PLease enter your height and weight when prompted")
-    Feet = int(input("Please enter your height(Feet):  "))
-    Inches = int(input("Please enter your height(Inches):  "))
-    Weight = float(input("Please enter your weight(LBS):  "))
+    print("Welcome to the BMI Calculator! Please enter your height and weight when prompted.\n")
+    
+    try:
+        Feet = int(input("Enter your height (Feet): "))
+        Inches = int(input("Enter your height (Inches): "))
+        Weight = float(input("Enter your weight (LBS): "))
 
-    BMI, Category = Calculate_BMI(Feet, Inches, Weight)
-    print(f"BMI: {BMI}, Category: {Category}")
+        bmi, category = calculate_bmi(Feet, Inches, Weight)
+        print(f"\nYour BMI is: {bmi}")
+        print(f"Category: {category}")
 
+    except ValueError:
+        print("\nInvalid input. Please enter numeric values only.")
 
 if __name__ == "__main__":
-        main()
+    main()

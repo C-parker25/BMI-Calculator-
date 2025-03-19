@@ -1,14 +1,14 @@
-def Calculate_BMI(Feet, Inches, Weight):
-    height_Inches = (Feet * 12) + Inches
-    BMI = (Weight /(height_Inches ** 2)) * 703
-    BMI = round(BMI, 1)
+def calculate_bmi(Feet, Inches, Weight):
+    def _bmi_category(bmi):
+        if bmi < 18.5:
+            return "Underweight"
+        elif bmi < 25:
+            return "Normal Weight"
+        elif bmi < 30:
+            return "Overweight"
+        return "Obese"
 
-    if BMI < 18.5:
-        category = "Underweight"
-    elif BMI < 25:
-        category = "Normal Weight"
-    elif BMI < 30:
-        category = "Overweight"
-    else:
-        category = "Obese"
-    return BMI, category
+    height_inches = (Feet * 12) + Inches
+    bmi = round((Weight / (height_inches ** 2)) * 703, 1)
+    
+    return bmi, _bmi_category(bmi)
